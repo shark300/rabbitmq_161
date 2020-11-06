@@ -1,0 +1,22 @@
+spring:
+  rabbitmq:
+    host: ${RABBITMQ_HOST}
+    port: ${RABBITMQ_PORT}
+    username: ${RABBITMQ_USER}
+    password: ${RABBITMQ_PASSWORD}
+    virtual-host: ${RABBITMQ_VIRTUAL_HOST}
+    ssl:
+      enabled: ${RABBITMQ_SSL_ENABLED}
+      trust-store: ${TRUSTSTORE_RESOURCE}
+      trust-store-password: ${TRUSTSTORE_PASSWORD}
+
+service:
+  integration:
+    binding:
+      incoming:
+        exchange-name: ${INCOMING_EXCHANGE_NAME}
+        queue-name: ${INCOMING_QUEUE_NAME}
+        dead-letter:
+          exchange-name: ${INCOMING_DEAD_LETTER_EXCHANGE_NAME}
+          queue-name: ${INCOMING_DEAD_LETTER_QUEUE_NAME}
+          routing-key: ${INCOMING_DEAD_LETTER_ROUTING_KEY_NAME}

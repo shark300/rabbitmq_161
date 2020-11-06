@@ -1,0 +1,32 @@
+buildscript {
+	repositories {
+		mavenCentral()
+	}
+}
+
+plugins {
+	id 'org.springframework.boot' version "${springBootVersion}"
+
+	id 'groovy'
+}
+
+group = 'com.github'
+version = "1.0"
+
+sourceCompatibility = '11'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation platform("org.springframework.boot:spring-boot-dependencies:${springBootVersion}")
+	implementation platform("org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}")
+
+	implementation 'org.codehaus.groovy:groovy:3.0.5'
+	implementation 'org.springframework.boot:spring-boot-starter-amqp'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+}
+
+
+
